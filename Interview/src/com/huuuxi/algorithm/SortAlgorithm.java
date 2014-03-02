@@ -31,6 +31,31 @@ public class SortAlgorithm {
 		}
 	}
 	/** 
+	* @Title: halfInsertSort 
+	* @Description: 折半插入排序
+	* @Return: 
+	*/
+	public static void halfInsertSort(){
+		for(int i = 1;i<array.length;i++){
+			int low = 0,high=i-1;
+			int temp = array[i];
+			while(low <= high){
+				int m =  (low+high) / 2;
+				if (temp <= array[m]) {
+					high = m-1;
+				}else{
+					low = m+1;
+				}
+			}
+			for (int j = i; j >= low+1; j--) {
+				array[j] = array[j-1];
+			}
+			array[low] = temp;
+		}
+		
+	}
+	
+	/** 
 	* @Title: selectSort 
 	* @Description: 选择排序
 	* @Return: 
@@ -109,9 +134,12 @@ public class SortAlgorithm {
 		//insertSort();
 		//selectSort();
 		//bubbleSort();
-		quickSort(0,array.length-1);
+		halfInsertSort();
+		/*quickSort(0,array.length-1);*/
 		for(int m = 0;m<array.length;m++){
 			System.out.println(array[m]);
 		}
+		
+		
 	}
 }

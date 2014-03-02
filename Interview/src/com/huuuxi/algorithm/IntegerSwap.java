@@ -1,4 +1,7 @@
 package com.huuuxi.algorithm;
+
+import java.lang.reflect.Field;
+
 /**   
  * @Title: IntegerSwap.java 
  * @Description: 
@@ -41,8 +44,44 @@ public class IntegerSwap {
 		   System.out.println(Float.NaN != Float.NaN);
 		   System.out.println((Double.NaN != Double.NaN) + "\n");
 		}
+	
+	public static void swapInt(){
+		Integer m = new Integer(11);
+		Integer n = new Integer(2);
+		swap(m,n);
+		System.out.println("m and n is :"+m+" "+n);
+		
+	}
+	public static void swap(Integer m,Integer n){
+		try {
+			int _m = m;
+			Field field = Integer.class.getDeclaredField("value");
+			field.setAccessible(true);
+			field.setInt(m, n.intValue());
+			field.setInt(n, _m);
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchFieldException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	/** 
+	* @Title: main 
+	* @Description: 
+	* @Return: 
+	*/
 	public static void main(String[] args) {
 		//swap2();
-		compare();
+		//compare();
+		swapInt();
 	}
 }
