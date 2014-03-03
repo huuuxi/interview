@@ -1,4 +1,8 @@
 package com.huuuxi.algorithm;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**   
  * @Title: SortAlgorithm.java 
  * @Description: 
@@ -130,15 +134,84 @@ public class SortAlgorithm {
 		
 	}
 	
+	/** 
+	* @Title: mergeSort 
+	* @Description: 归并排序
+	* @Return: 
+	*/
+	public static void  mergeSort(int[] array, int start ,int end ,int[] temp){
+		int mid = (start+end)/2;
+		if (start < end) {
+			mergeSort(array,start , mid,temp);
+			mergeSort(array, mid+1, end,temp);
+			mergeArray(array,start,mid,end,temp);
+		}
+	}
+	public static void mergeArray(int[] array ,int start, int mid ,int end,int[] temp){
+		int i = start,j=mid+1;
+		int m = mid,n = end;
+		int k = 0;
+		while (i<=m && j <=n) {
+			if (array[i] <= array[j]) {
+				temp[k++] = array[i++] ;
+			}else {
+				temp[k++] = array[j++] ;
+			}
+		}
+		while(i <=m){
+			temp[k++] = array[i++];
+		}
+		while(j <=n){
+			temp[k++] = array[j++];
+		}
+		for (int h = 0;h<k ;h++) {
+			array[start+h] = temp[h];
+		}
+		
+	}
+	
+	
+	/** 
+	* @Title: shellSort 
+	* @Description: 希尔排序
+	* @Return: 
+	*/
+	public static void shellSort(int d,int dataNum){
+		for(int i = d;i<dataNum;i++){
+			int j = i-d;
+			int temp = array[i];
+			while(j>=0 && array[j] > temp){
+				array[j+d] = array[j];
+				j -= d;
+			}
+			if (j != i -d) {
+				array[j+d] = temp;
+			}
+		}
+	}
+	public static void ShellSortNum(){
+		int d = array.length /2;
+		while (d >=1) {
+			shellSort(d, array.length);
+			d = d/2;
+		}
+	}
+	
 	public static void main(String[] args) {
 		//insertSort();
 		//selectSort();
 		//bubbleSort();
-		halfInsertSort();
+		//halfInsertSort();
+		/*int[] temp = new int[array.length];
+		mergeSort(array, 0, array.length-1, temp);
+		for(int m = 0;m<temp.length;m++){
+			System.out.println(temp[m]);
+		}*/
 		/*quickSort(0,array.length-1);*/
+		/*ShellSortNum();
 		for(int m = 0;m<array.length;m++){
 			System.out.println(array[m]);
-		}
+		}*/
 		
 		
 	}
