@@ -1,4 +1,4 @@
-package com.huuuxi.algorithm;
+package com.huuuxi.jdk;
 
 /**
  * @Title: InnerClass.java
@@ -13,6 +13,20 @@ public class InnerClass {
 	private int out_i = 1;
 
 	private static int static_i = 111;
+	
+	interface abc{
+		void syso();
+	}
+	
+	public void ff(){
+		abc a = new abc() {
+			@Override
+			public void syso() {
+			}
+		};
+		System.out.println(a);
+	}
+	
 	
 	public void f(final int k) {
 		final int s = 200;

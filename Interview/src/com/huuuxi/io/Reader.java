@@ -1,4 +1,4 @@
-package com.huuuxi.algorithm;
+package com.huuuxi.io;
 
 import java.io.BufferedReader;
 import java.io.IOException;

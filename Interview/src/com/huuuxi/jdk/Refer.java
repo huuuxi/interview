@@ -1,7 +1,10 @@
-package com.huuuxi.algorithm;
+package com.huuuxi.jdk;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import javax.xml.soap.MimeHeader;
 
 /**   
  * @Title: Refer.java 
@@ -30,5 +33,6 @@ public class Refer {
 		buff.append("ddddd");
 		System.out.println(buff.toString());
 		System.out.println(maps.get("b").toString());
+		
 	}
 }
