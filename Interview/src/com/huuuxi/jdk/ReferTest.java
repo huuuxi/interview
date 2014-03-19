@@ -1,4 +1,11 @@
 package com.huuuxi.jdk;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 /**   
  * @Title: ReferTest.java 
  * @Description: 
@@ -31,6 +38,11 @@ public class ReferTest {
 		h ts = new h();
 		ts.i = 9;
 		hh = ts;
+		
+		File f = new File("aa");
+		InputStream input = new FileInputStream(f);
+		InputStreamReader r = new InputStreamReader(input);
+		BufferedReader reader = new BufferedReader(r);
 	}
 	
 }

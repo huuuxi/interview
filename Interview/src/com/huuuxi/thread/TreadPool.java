@@ -67,6 +67,7 @@ public class TreadPool {
 		Callable<V>;
 		
 		Lock;
+		Thread;
 		ThreadLocal<T>; // hibernate . spring aop transcation use this ,only a copy 
 		
 		

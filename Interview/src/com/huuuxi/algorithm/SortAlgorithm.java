@@ -1,8 +1,5 @@
 package com.huuuxi.algorithm;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**   
  * @Title: SortAlgorithm.java 
  * @Description: 
@@ -109,6 +106,7 @@ public class SortAlgorithm {
 	/** 
 	* @Title: quickSort 
 	* @Description: 快速排序
+	* 不稳定
 	* @Return: 
 	*/
 	public static void quickSort(int begin,int end){
@@ -137,6 +135,8 @@ public class SortAlgorithm {
 	/** 
 	* @Title: mergeSort 
 	* @Description: 归并排序
+	* 稳定
+	* 0
 	* @Return: 
 	*/
 	public static void  mergeSort(int[] array, int start ,int end ,int[] temp){
@@ -173,7 +173,8 @@ public class SortAlgorithm {
 	
 	/** 
 	* @Title: shellSort 
-	* @Description: 希尔排序
+	* @Description: 希尔排序   
+	*  不稳定的
 	* @Return: 
 	*/
 	public static void shellSort(int d,int dataNum){

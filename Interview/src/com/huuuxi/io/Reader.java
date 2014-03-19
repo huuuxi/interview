@@ -1,9 +1,15 @@
 package com.huuuxi.io;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 /**   
  * @Title: Reader.java 
@@ -31,5 +37,13 @@ public class Reader {
 	
 	public static void main(String[] args) {
 		readline();
+		InputStream;
+		FileInputStream;
+		Observer;
+		Observable;
+		Proxy; 
+		InvocationHandler;
+		
+		
 	}
 }
